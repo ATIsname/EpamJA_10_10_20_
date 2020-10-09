@@ -1,15 +1,15 @@
-package CleanCode;
+package training.CleanCode;
 
 
 // version: 1.1
 // made by Vitali Shulha
 // 4-Jan-2019
 
-import CleanCode.Planes.ExperimentalPlane;
-import CleanCode.Planes.MilitaryPlane;
-import CleanCode.Planes.PassengerPlane;
-import CleanCode.Planes.Plane;
-import CleanCode.models.MilitaryType;
+import training.CleanCode.Planes.ExperimentalPlane;
+import training.CleanCode.Planes.MilitaryPlane;
+import training.CleanCode.Planes.PassengerPlane;
+import training.CleanCode.Planes.Plane;
+import training.CleanCode.models.MilitaryType;
 
 import java.util.*;
 
@@ -90,7 +90,7 @@ public class Airport {
         });
         return this;
     }
-    
+
     public Airport sortByMaxSpeed() {
         Collections.sort(planes, new Comparator<Plane>() {
             public int compare(Plane o1, Plane o2) {

@@ -1,10 +1,13 @@
-package Collections;
+package training.Collections;
 
-import java.util.Comparator;
-
-public class IngredientAndItsServings {
+public class VegetableIngredientAndItsServings {
     private Vegetable productObject;
     private double countOfServings;
+
+    public VegetableIngredientAndItsServings(Vegetable productObject, double countOfServings) {
+        this.productObject = productObject;
+        this.countOfServings = countOfServings;
+    }
 
     public Vegetable getProductObject() {
         return productObject;
@@ -12,11 +15,6 @@ public class IngredientAndItsServings {
 
     public double getCountOfServings() {
         return countOfServings;
-    }
-
-    public IngredientAndItsServings(Vegetable productObject, double countOfServings) {
-        this.productObject = productObject;
-        this.countOfServings = countOfServings;
     }
 
     @Override

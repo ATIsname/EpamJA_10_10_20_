@@ -1,8 +1,8 @@
-package CleanCode.Planes;
+package training.CleanCode.Planes;
 
 import java.util.Objects;
 
-public class PassengerPlane extends Plane{
+public class PassengerPlane extends Plane {
     private int passengersCapacity;
 
     public PassengerPlane(String model, int maxSpeed,
@@ -19,7 +19,7 @@ public class PassengerPlane extends Plane{
     public String toString() {
         return super.toString().replace("}",
                 ", passengersCapacity=" + passengersCapacity +
-                '}');
+                        '}');
     }
 
     @Override

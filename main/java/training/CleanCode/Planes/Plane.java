@@ -1,8 +1,8 @@
-package CleanCode.Planes;
+package training.CleanCode.Planes;
 
 import java.util.Objects;
 
-abstract public class Plane {
+public abstract class Plane {
     protected String model;
     protected int maxSpeed;
     protected int maxFlightDistance;

@@ -1,4 +1,4 @@
-package Collections.Optional;
+package training.Collections.Optional;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -14,32 +14,28 @@ public class Task {
         return new StringBuilder(str).reverse().toString();
     }
 
-    public static void EntryReverseTextInFile(String fileName){
+    public static void EntryReverseTextInFile(String fileName) {
         String reverseText = reverseString(GetStringFromFile(fileName));
-        try(FileWriter writer = new FileWriter(fileName))
-        {
+        try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(reverseText);
             writer.flush();
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
 
             System.out.println(ex.getMessage());
         }
         System.out.println("The file has been written");
     }
 
-    public static String GetStringFromFile(String NameOfFile){
+    public static String GetStringFromFile(String NameOfFile) {
         String text = "";
-        try(FileReader reader = new FileReader(NameOfFile))
-        {
+        try (FileReader reader = new FileReader(NameOfFile)) {
             // читаем посимвольно
             int c;
-            while((c=reader.read())!=-1){
+            while ((c = reader.read()) != -1) {
 
                 text += (char) c;
             }
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
 
             System.out.println(ex.getMessage());
         }
@@ -52,8 +48,8 @@ public class Task {
         int size = String.valueOf(number).length();
         for (int i = 0; i < size; i++) {
             temp = number % 10;
-            number/=10;
-            stackIntNumber.push((int)temp);
+            number /= 10;
+            stackIntNumber.push((int) temp);
         }
         System.out.println(stackIntNumber);
     }
@@ -66,7 +62,7 @@ public class Task {
     public static List<Integer> createNewList() {
         ArrayList<Integer> integers = new ArrayList<>();
         Random random = new Random(System.currentTimeMillis());
-        for(int i = 0; i < 15; i++) {
+        for (int i = 0; i < 15; i++) {
             int number = -15 + random.nextInt(16 + 15);
             integers.add(number);
         }
@@ -75,14 +71,12 @@ public class Task {
 
     public static void main(String[] args) {
         String fileName = "X://Java project//maven-demo//src//someText.txt";
-        try(FileWriter writer = new FileWriter(fileName, false))
-        {
+        try (FileWriter writer = new FileWriter(fileName, false)) {
             // запись всей строки
             String text = "Hello Gold!";
             writer.write(text);
             writer.flush();
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
 
             System.out.println(ex.getMessage());
         }

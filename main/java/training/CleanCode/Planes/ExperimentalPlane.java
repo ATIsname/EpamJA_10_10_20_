@@ -1,10 +1,12 @@
-package CleanCode.Planes;
+package training.CleanCode.Planes;
 
 
-import CleanCode.models.ClassificationLevel;
-import CleanCode.models.ExperimentalTypes;
+import training.CleanCode.models.ClassificationLevel;
+import training.CleanCode.models.ExperimentalTypes;
 
-public class ExperimentalPlane extends Plane{
+import java.util.Objects;
+
+public class ExperimentalPlane extends Plane {
     private ExperimentalTypes type;
     private ClassificationLevel classificationLevel;
 
@@ -15,11 +17,11 @@ public class ExperimentalPlane extends Plane{
         this.classificationLevel = classificationLevel;
     }
 
-    public ClassificationLevel getClassificationLevel(){
+    public ClassificationLevel getClassificationLevel() {
         return classificationLevel;
     }
 
-    public void setClassificationLevel(ClassificationLevel classificationLevel){
+    public void setClassificationLevel(ClassificationLevel classificationLevel) {
         this.classificationLevel = classificationLevel;
     }
 
@@ -29,18 +31,19 @@ public class ExperimentalPlane extends Plane{
         if (!(o instanceof ExperimentalPlane)) return false;
         if (!super.equals(o)) return false;
         ExperimentalPlane that = (ExperimentalPlane) o;
-        return type == that.type;
+        return type == that.type && classificationLevel == that.classificationLevel;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(super.hashCode(), classificationLevel, type);
     }
 
     @Override
     public String toString() {
-        return "experimentalPlane{" +
-                "model='" + super.model + '\'' +
+        return "ExperimentalPlane{" +
+                "type=" + type +
+                ", classificationLevel=" + classificationLevel +
                 '}';
     }
 }

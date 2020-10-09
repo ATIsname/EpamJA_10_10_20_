@@ -1,8 +1,6 @@
-package Classes;
+package training.Classes;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -68,7 +66,7 @@ public class Student {
 
     public void setName(String name) {
         if (!name.isEmpty()) {
-            this.name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+            this.name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         } else {
             throw new RuntimeException("Variables cannot take in an empty String or null value for the \"name\"");
         }
@@ -76,7 +74,7 @@ public class Student {
 
     public void setSurname(String surname) {
         if (!surname.isEmpty()) {
-            this.surname = surname.substring(0,1).toUpperCase() + surname.substring(1).toLowerCase();
+            this.surname = surname.substring(0, 1).toUpperCase() + surname.substring(1).toLowerCase();
         } else {
             throw new RuntimeException("Variables cannot take in an empty String or null value for the \"surname\"");
         }
@@ -109,12 +107,11 @@ public class Student {
     }
 
     public void setTelephoneNumber(String telephoneNumber) {
-        Pattern pattern = Pattern.compile( "\\d{9}|(?:\\d{2}-){3}\\d{4}|\\(\\d{2}\\)\\d{3}-?\\d{4}");
+        Pattern pattern = Pattern.compile("\\d{9}|(?:\\d{2}-){3}\\d{4}|\\(\\d{2}\\)\\d{3}-?\\d{4}");
         Matcher matcher = pattern.matcher(telephoneNumber);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             this.telephoneNumber = telephoneNumber;
-        }
-        else {
+        } else {
             throw new RuntimeException("Variables cannot take in an empty String or null value or patter of" +
                     " telephone humber haven't been used for the \"telephone number\"");
         }
@@ -145,9 +142,11 @@ public class Student {
     }
 
     //with inputting telephone number
-    public Student(int id,String name, String surname, String thirdName, LocalDate birthdate, String address, String telephoneNumber, String faculty, int course, String group) {
+    public Student(int id, String name, String surname, String thirdName, LocalDate birthdate,
+                   String address, String telephoneNumber, String faculty, int course, String group) {
         setId(id);
-        setName(name);;
+        setName(name);
+        ;
         setSurname(surname);
         setThirdName(thirdName);
         setBirthdate(birthdate);
@@ -159,9 +158,11 @@ public class Student {
     }
 
     //without inputting telephone number
-    public Student(int id, String name, String surname, String thirdName, LocalDate birthdate, String address, String faculty, int course, String group) {
+    public Student(int id, String name, String surname, String thirdName, LocalDate birthdate,
+                   String address, String faculty, int course, String group) {
         setId(id);
-        setName(name);;
+        setName(name);
+        ;
         setSurname(surname);
         setThirdName(thirdName);
         setBirthdate(birthdate);
